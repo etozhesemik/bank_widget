@@ -1,4 +1,7 @@
-def get_mask_account(account_number: int) -> str:
+from typing import Union
+
+
+def get_mask_account(account_number: Union[str, int]) -> str:
     """
     Функция принимает на вход номер счета
     и возвращает последние 4 цифры номера, а перед ними — две звездочки.
@@ -11,7 +14,5 @@ def get_mask_account(account_number: int) -> str:
     """
 
     str_account_number = str(account_number)
-    if len(str_account_number) == 20:
-        return f"**{str_account_number[-4:]}"
-    else:
-        return "Номер счёта должен содержать 20 символов"
+
+    return f"**{str_account_number[-4:]}"

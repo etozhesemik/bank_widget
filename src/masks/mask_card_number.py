@@ -1,4 +1,7 @@
-def get_mask_card_number(card_number: int) -> str:
+from typing import Union
+
+
+def get_mask_card_number(card_number: Union[str, int]) -> str:
     """
     Функция принимает на вход номер карты и возвращает ее маску.
 
@@ -10,7 +13,5 @@ def get_mask_card_number(card_number: int) -> str:
     """
 
     str_card_number = str(card_number)
-    if len(str_card_number) == 16:
-        return f"{str_card_number[0:4]} {str_card_number[4:6]} ** **** {str_card_number[-4:]}"
-    else:
-        return "Номер карты должен содержать 16 символов"
+
+    return f"{str_card_number[0:4]} {str_card_number[4:6]} ** **** {str_card_number[-4:]}"
