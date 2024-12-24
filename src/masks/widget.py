@@ -33,3 +33,23 @@ def mask_account_card(type_and_number: str) -> str:
     else:
 
         return f"{type_result} {get_mask_account(number_result)}"
+
+
+def get_date(user_date: str) -> str:
+    """
+    Функция принимает на вход строку с датой в одном формате, а возвращает в другом
+
+    Пример ввода:
+    2024-03-11T02:26:18.671407
+
+    Пример вывода:
+    ДД.ММ.ГГГГ
+    """
+
+    import datetime
+
+    date_format = datetime.datetime.strptime(user_date, "%Y-%m-%dT%H:%M:%S.%f")
+
+    new_date = date_format.strftime("%d.%m.%Y")
+
+    return new_date
