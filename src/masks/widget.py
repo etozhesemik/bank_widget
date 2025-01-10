@@ -1,3 +1,5 @@
+import datetime
+
 from src.masks.mask_account import get_mask_account
 from src.masks.mask_card_number import get_mask_card_number
 
@@ -45,8 +47,6 @@ def get_date(user_date: str) -> str:
     Пример вывода:
     ДД.ММ.ГГГГ
     """
-
-    import datetime
 
     date_format = datetime.datetime.strptime(user_date, "%Y-%m-%dT%H:%M:%S.%f")
 
