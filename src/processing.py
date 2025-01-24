@@ -13,7 +13,7 @@ def filter_by_state(lists: Union[list], user_state: Union[str] = "EXECUTED") -> 
     return new_list
 
 
-def sort_by_date(lists: Union[list], reverse: Union[bool] = False) -> list:
+def sort_by_date(lists: Union[list], reverse: Union[bool] = True) -> list:
     """Функция сортирует список по дате"""
 
     return sorted(lists, key=lambda x: x["date"], reverse=reverse)
